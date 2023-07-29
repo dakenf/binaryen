@@ -187,6 +187,9 @@ void PassRegistry::registerPasses() {
                "information about what content can actually appear in each "
                "location",
                createGUFAPass);
+  registerPass("gufa-cast-all",
+               "GUFA plus add casts for all inferences",
+               createGUFACastAllPass);
   registerPass("gufa-optimizing",
                "GUFA plus local optimizations in functions we modified",
                createGUFAOptimizingPass);
@@ -375,6 +378,9 @@ void PassRegistry::registerPasses() {
   registerPass("remove-unused-types",
                "remove unused private GC types",
                createRemoveUnusedTypesPass);
+  registerPass("reorder-functions-by-name",
+               "sorts functions by name (useful for debugging)",
+               createReorderFunctionsByNamePass);
   registerPass("reorder-functions",
                "sorts functions by access frequency",
                createReorderFunctionsPass);
